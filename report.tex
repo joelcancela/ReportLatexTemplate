@@ -1,0 +1,129 @@
+\documentclass[a4paper]{article} % I like this one
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % for accented characters
+\usepackage[french]{babel} % support french sections title (table des matières, liste des tableaux, etc.)
+\usepackage{amsmath,amssymb} % for formulas
+\usepackage{subfigure} % allows to add "sub" figures in a single figure or table
+\usepackage{pdflscape} % support for the landscape pages with /rotate
+\usepackage{rotating} % allows to rotate figures and tables
+\usepackage{algorithm2e} % makes algorithms floating objects like figures
+\usepackage{algorithmic} % defines a floating algorithm environment designed to work with the algorithmic style
+\usepackage{tabularx} % support for responsive tables
+\usepackage{hyperref} % to add URLs in references
+\usepackage{parskip} % deals with spaces between paragraphs
+\usepackage{fancyhdr} % for cool headers and main page
+\usepackage{vmargin} % light version of geometry
+\usepackage[labelfont={bf,it},textfont=it]{caption} % for better looking captions
+\usepackage[right]{eurosym} % euro symbol
+\usepackage{float} % for good figure placement
+\usepackage{color} % to be able to colorize text
+\usepackage{makecell} % support for cells with line breaks
+\usepackage{afterpage} % support to add empty pages
+% aliases
+\newcommand{\comment}[1] {} % comment alias (make text not rendering)
+\newcommand{\ie}{\textit{i.e.}~\/} % ie alias
+\newcommand{\eg}{\textit{e.g.}~\/} % e.g. alias
+\newcommand{\source}[1]{\caption*{\textbf{Source:} {#1}} } % source alias for captions
+\newcommand\blankpage{\null\thispagestyle{empty}\addtocounter{page}{-1}\newpage} % support for blank pages
+% settings
+\def\UrlFont{\rmfamily} % deals with Unicode in URLs
+\graphicspath{{figures/}} % figures path
+\setmarginsrb{2.5 cm}{2.5 cm}{2.5 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm} % margins
+% metadata
+\title{Conception and development of the new ARC Reactor} % title of document
+\author{Joël Cancela Vaz}	% author
+\date{\today}	% date
+% aliases to be able to use @ as a letter
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+%% Style
+% style of all pages
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+% custom style for first page
+\fancypagestyle{titlestyle}{
+\fancyhf{}
+\vspace{-2cm}
+\lhead{\includegraphics[height=0.14\textheight]{logos/school_logo1.png}} % Top left logo
+\rhead{\includegraphics[height=0.14\textheight]{logos/school_logo2.png}} % Top right logo
+\renewcommand{\headrulewidth}{0pt}
+}
+\setlength{\headheight}{86.2pt} % removes fancyhdr warning
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin document
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title page
+\pagenumbering{Alph} % Removes numbering under page for the first page
+\begin{titlepage}
+\thispagestyle{titlestyle}
+\centering
+\vspace*{2.5 cm}
+\textsc{\LARGE Computer Sciences Engineer}\\[0.5 cm]
+\textsc{\Large Cool Report}\\[1 cm]
+\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+{ \huge \bfseries \thetitle }\\
+\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\theauthor
+\end{flushleft}
+\end{minipage}~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisors:} \\
+Tony Stark\\
+Pepper Potts
+\end{flushright}
+\end{minipage}\\[2 cm]
+\textsc{\Large Stark Industries, Berlin, Germany}\\[1 cm]	
+\textsc{\large 26th April 2016 - 7th July 2016}\\[1 cm]	
+%{\large \thedate}\\[2 cm] % Date
+\vfill
+\end{titlepage}
+\pagenumbering{arabic} % Restores numbering for next pages
+\setlength{\headheight}{12pt} % removes fancyhdr warning
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgments
+\newpage
+\section*{Acknowledgments}
+I would like to thank myself for making this template.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract
+\newpage
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+Nice abstract in English.
+\end{abstract}
+\vspace{0.5cm}
+\renewcommand{\abstractname}{Résumé}
+\begin{abstract}
+Un cool résumé en français.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOC
+\newpage
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lists of figures & tables
+\newpage
+\listoffigures
+\listoftables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction
+\newpage
+\section{Introduction}
+Cool intro here~\cite{wikiVR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusion
+\newpage
+\section{Conclusion}
+Thanks to this experience, I was able to practice and improve my English communication skills. I used what I learnt in C\# and I have discovered the basics of game development, which was something I was interested in.\smallbreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% References
+\newpage
+\bibliographystyle{splncs03}
+\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Appendix
+\newpage
+\section*{Appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% End Of Document
+\end{document}
