@@ -23,7 +23,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org>
 
-## Third-Party Component Exception
+* Third-Party Component Exception
 The bibliography style file `splncs03.bst` included in this repository is NOT covered 
 by The Unlicense. It remains the property of Springer and is distributed under the 
 LaTeX Project Public License (LPPL).
